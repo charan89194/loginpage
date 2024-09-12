@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body{
+            background-image: url(/images/pexels-eberhardgross-2098428.jpg);
+            background-size: cover;
+
+        }
+
+        h1{
+            color: cadetblue;
+            text-align: center;
+            
+        }
+      
+        #loginForm {
+            display: none;
+            border: 3px groove #ee8e46;
+            padding: 20px;
+            max-width: 300px;
+            margin: 20px auto;
+            color: #fdf1f5;
+            justify-content: center;
+            
+        }
+        #loginform ,h2{
+            text-align: center;
+            
+        }
+
+        #registerform{
+            display: none;
+            border: 5px solid #ee8e46;
+            padding: 20px;
+            max-width: 400px;
+            margin: 20px auto;
+            color: #d9e0a4;
+            justify-content: center;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        input[type="text"], input[type="number"]{
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+
+        .login{
+            background-color: darkslategrey;
+            color: white;
+            padding: 10px;
+            margin: 10px ;
+            border: none;
+            cursor: pointer;
+            width: 10%;
+        }
+        .register{
+            background-color: darkslategrey;
+            color: white;
+            padding: 10px;
+            margin: 10px ;
+            border: none;
+            cursor: pointer;
+            width: 10%;
+        }
+
+
+    </style>
+    <script>
+        
+        function showLoginForm() {
+            
+            var loginForm = document.getElementById('loginForm');
+            loginForm.style.display = 'block';
+            registerform.style.display='none'
+            
+        }
+        
+        function showregisterform(){
+            var registerform = document.getElementById('registerform')
+            registerform.style.display = 'block'
+            loginForm.style.display = 'none'
+        }
+    </script>
+</head>
+<body>
+
+    <h1>Welcome to Our Website</h1>
+    
+    <button  class="login" onclick="showLoginForm()">Login</button>
+    <button class="register" onclick="showregisterform()">register</button>
+
+    
+    <div id="loginForm">
+        <h2>Login</h2>
+        <form action="/submit-login" method="POST">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username"  placeholder="username" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="password"   required>
+
+        <div class="demo">
+            <button type="submit">login</button>
+        </div>
+        </form>
+    </div>
+
+
+    <div id="registerform">
+        <h2>CREATE AN ACCOUNT</h2>
+        <form action="/submit-register" method="post">
+            <label for="firstname">FIRSTNAME</label>
+            <input type="text" id="firstname" name="firstname" placeholder="firstname" required>
+
+            <label for="lastname">LASTNAME</label>
+            <input type="text" id="lastname" name="lastname" placeholder="lastname" required>
+
+            <label for="email">EMAIL</label>
+            <input type="text" id="email" name="email" placeholder="email" required>
+
+            <label for="mobilenumber">MOBILE NUMBER</label>
+            <input type="text" placeholder="(+91)INDIA"  required>
+
+            <button type="submit">submit</button>
+
+
+
+
+        </form>
+
+
+    </div>
+
+</body>
+</html>
